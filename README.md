@@ -1,52 +1,63 @@
 # Term Project
 # Amy Meng Hatton Tong
 
-# Project Proposal
+# Project Proposal：Taste Bridge 味之桥
 
 ## 1. The Big Idea
-Our project aims to [describe main idea, e.g., "develop a platform to connect small businesses with local freelancers for project-based work"]. The focus will be on [mention specific topics, e.g., "efficient matching algorithms and user-friendly interfaces"]. 
-
-- **Minimum Viable Product (MVP):** The MVP will include [e.g., "a basic matching system and user profiles for businesses and freelancers"].
-- **Stretch Goal:** If time permits, we’ll aim to add [e.g., "an automated recommendation engine and analytics for users"].
+The primary goal of our project is to create an interactive website that translates Chinese food names into English and offers a comprehensive introduction to each dish. By leveraging the OpenAI API, we aim to provide users with detailed insights into Chinese cuisine, including the ingredients, flavor profiles, regional origins, and cooking methods of various dishes. Additionally, we’ll feature a recommendation system to guide foreigners on whether each dish is suitable for those trying Chinese food for the first time. Our minimum viable product (MVP) will be a functional website where users can input a Chinese food name to receive an English translation and a brief description. For our stretch goal, we aim to add a feature where users can input their zip code to locate nearby Chinese restaurants offering these dishes, enhancing the user experience with both informational and practical value. 
 
 ## 2. Learning Objectives
-We aim to deepen our understanding of [main objectives, e.g., "web development, project management, and real-time data processing"].
-
-- **Shared Goals:** As a team, we want to learn how to [e.g., "work with agile methodologies and Git for collaborative coding"].
-- **Individual Goals:** 
-  - Team Member 1: Gain experience with [e.g., "backend development using Node.js"].
-  - Team Member 2: Enhance skills in [e.g., "UI/UX design and frontend frameworks like React"].
+This project offers us opportunities to build both collective and individual skills. As a team, our primary goal is to develop proficiency in web development and API integration, particularly focusing on creating a user-friendly interface that incorporates real-time language processing. We also aim to deepen our understanding of Python and learn more about web design techniques and UI/UX optimization. Additionally, we all hope to enhance our collaborative skills through version control and regular project updates, ensuring a smooth development process. 
 
 ## 3. Implementation Plan
-Our preliminary approach involves using [mention any frameworks, libraries, or tools, e.g., "React for the frontend, Express for the backend, and MongoDB for data storage"]. 
+Our project will utilize several tools and frameworks, starting with Flask for website development, which will allow us to create a responsive and intuitive frontend. We will use the OpenAI API for language translation and natural language processing tasks to retrieve detailed descriptions, ingredient lists, and cooking instructions. For our stretch goal, we will integrate the Mapbox’s Geocoding API to display nearby Chinese restaurants based on user’s zip code input. In our initial phase, we will focus on MVP completion, ensuring the site effectively translates food names and delivers essential details. If uncertainties arise in implementation, we will conduct further research on OpenAI API usage and explore additional libraries like Google Maps API if we need more detailed location-based data for the stretch goal. By adopting an agile approach with regular iterations, we will gradually expand the site’s functionality, making adjustments based on user feedback and testing. 
 
-- **Exploration Areas:** We'll investigate [list any unknowns, e.g., "optimizing the matching algorithm and setting up cloud infrastructure"] and potentially consult resources on [list any tools or documentation].
-  
 ## 4. Project Schedule
-We have a rough schedule spanning 4-5 weeks:
+We have allocated approximately 4-5 weeks for this project and created the following timeline to guide our progress. This schedule is flexible and will be updated as the project evolves:
 
-- **Week 1:** Finalize requirements and set up project repository.
-- **Week 2:** Begin core development (frontend/backend setup and basic UI design).
-- **Week 3:** Implement core functionalities and integrate the frontend and backend.
-- **Week 4:** Test and refine; add additional features as time allows.
-- **Week 5:** Complete testing and debugging; prepare for final presentation.
+- **Week 1:** Research APIs (OpenAI and Mapbox), finalize project requirements, and set up the project repository.
+- **Week 2:** Begin development by setting up the backend with Flask and designing the basic UI for the frontend.
+- **Week 3:** Implement core functionalities, including OpenAI API integration for translations and dish descriptions, and frontend-backend communication.
+- **Week 4:** Test the MVP thoroughly, refine the user interface, and address bugs or usability issues. Begin work on stretch goals if the MVP is complete.
+- **Week 5:** Complete stretch goals (e.g., restaurant finder using Mapbox), finalize testing and debugging, and prepare for the final presentation.
 
-This schedule is flexible and may be adjusted as the project evolves.
+This timeline ensures that we prioritize the core functionality before exploring advanced features, allowing us to deliver a polished MVP within the given time frame.
 
 ## 5. Collaboration Plan
-Our team will adopt a mix of task delegation and pair programming, dividing tasks into [describe specific roles if any, e.g., "frontend, backend, and documentation"].
+Our collaboration will be a mix of task delegation and pair programming, chosen to maximize efficiency while maintaining flexibility:
 
-- **Communication Tools:** We plan to use [mention tools, e.g., Slack for daily communication and GitHub Projects for tracking tasks].
-- **Collaboration Methodology:** We will follow an agile approach with weekly sprints to ensure we meet our deadlines. Our decision to use this approach is due to its flexibility and regular feedback loops.
+- **Task Delegation:** We will divide responsibilities into frontend, backend, and documentation tasks:
+  - **Frontend:** Designing and developing the user interface using HTML, CSS, and JavaScript.
+  - **Backend:** Implementing API integrations and the logic for processing user inputs and retrieving results.
+  - **Documentation:** Both members will collaborate on documenting progress, ensuring clarity in code and project deliverables.
+
+- **Pair Programming:** For complex components, such as API integration and debugging, we will pair program to combine expertise and ensure smooth functionality.
+
+- **Development Methodology:** We will follow an **agile methodology** with weekly sprints. Each sprint will include planning tasks, reviewing progress, and adjusting as needed. This methodology was chosen for its flexibility and regular feedback loops, which are essential for managing uncertainties in API integration and project scope.
+
+- **Communication Tools:** We will use WeChat for daily communication, Word Online for planning, and GitHub Projects for tracking tasks and managing version control.
+
+This collaborative approach ensures clear communication, efficient task management, and high-quality outputs.
 
 ## 6. Risks and Limitations
-The main risk is [describe the main risk, e.g., "the complexity of the matching algorithm, which might delay development"]. 
+The main risks to the project include:
 
-- **Mitigation:** We’ll minimize risk by dedicating extra time to researching and prototyping critical components early in the project.
+- **API Limitations:** OpenAI and Mapbox APIs may have rate limits or cost constraints that could affect functionality.
+- **Integration Challenges:** Combining multiple APIs seamlessly and ensuring consistent data retrieval for both frontend and backend can be complex.
+- **Data Quality:** The accuracy of translations, dish descriptions, and recommendations heavily depends on the API responses, which may require fine-tuning.
+- **Time Constraints:** Unexpected challenges during API integration or debugging may delay progress.
+
+To mitigate these risks:
+- We will prototype and test critical API components early to identify limitations.
+- Implement fallback mechanisms and error handling to address API failures.
+- Regularly review and adjust our timeline to stay on track.
 
 ## 7. Additional Course Content
-Some additional topics that may be beneficial include [mention specific topics, e.g., "advanced database management and optimization techniques"].
+The following course topics would be beneficial for our project:
 
----
+- **Advanced API Integration:** Understanding best practices for using APIs efficiently and handling complex responses.
+- **UI/UX Design Principles:** Learning advanced CSS techniques to improve user engagement and make our site more intuitive.
+- **Database Management:** Exploring how to structure and manage data effectively if we decide to expand the functionality in the future.
 
-Please review our proposal and provide any feedback to help us refine our plan.
+
+This plan ensures a structured yet adaptable approach, enabling us to tackle potential challenges effectively while delivering a functional and engaging project.
