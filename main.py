@@ -4,6 +4,7 @@ import requests
 from dotenv import load_dotenv
 import os
 
+
 # Load environment variables from .env
 load_dotenv()
 
@@ -17,28 +18,58 @@ app = Flask(__name__)
 def translate_and_describe_food(chinese_food_name):
     """Uses OpenAI API to translate and provide detailed insights into Chinese cuisine."""
     try:
-        # OpenAI API prompt to get detailed information
-        prompt = (
-            f"You are a culinary expert specializing in Chinese cuisine. Please provide a detailed description of the dish '{chinese_food_name}'. "
-            f"Include the following details:\n"
-            f"1. An English translation of the dish name.\n"
-            f"2. Key ingredients.\n"
-            f"3. Flavor profile (e.g., spicy, sweet, umami, etc.).\n"
-            f"4. Regional origin within China (if applicable).\n"
-            f"5. Cooking method (e.g., stir-fried, steamed, etc.).\n"
-            f"6. A recommendation on whether the dish is suitable for foreigners trying Chinese food for the first time, and why."
+        # OpenAI API prompt using the new ChatCompletion structure
+        messages = [
+            {"role": "system", "content": "You are a culinary expert specializing in Chinese cuisine."},
+            {"role": "user", "content": (
+                f"Please provide a detailed description of the dish '{chinese_food_name}'. "
+                f"Include the following details:\n"
+                f"1. An English translation of the dish name.\n"
+                f"2. Key ingredients.\n"
+                f"3. Flavor profile (e.g., spicy, sweet, umami, etc.).\n"
+                f"4. Regional origin within China (if applicable).\n"
+                f"5. Cooking method (e.g., stir-fried, steamed, etc.).\n"
+                f"6. A recommendation on whether the dish is suitable for foreigners trying Chinese food for the first time, and why."
+            )}
+        ]
+
+        # Use the new ChatCompletion method with gpt-3.5-turbo
+        response = openai.ChatCompletion.create(
+            model="gpt-3.5-turbo",  # Specify the model
+            messages=messages,  # Provide role-based messages
+            max_tokens=300,  # Adjust the token limit as needed
+            temperature=0.7  # Control the creativity level
         )
 
-        response = openai.Completion.create(
-            engine="text-davinci-003",
-            prompt=prompt,
-            max_tokens=300,
-            temperature=0.7
-        )
-        
-        return response.choices[0].text.strip()
+        # Extract content and format into structured data
+        raw_content = response['choices'][0]['message']['content'].strip()
+        description = [
+            {"title": line.split(":")[0].strip(), "content": ":".join(line.split(":")[1:]).strip()}
+            for line in raw_content.split("\n") if ":" in line
+        ]
+        return description
     except Exception as e:
-        return f"Error: {e}"
+        return [{"title": "Error", "content": str(e)}]
+
+
+def generate_dish_image(chinese_food_name):
+    """Uses OpenAI DALL·E API to generate a realistic image of the dish."""
+    try:
+        # Simplified prompt based only on the dish name
+        prompt = f"A realistic photograph of the Chinese dish '{chinese_food_name}' served on a plate, with traditional Chinese tableware, in a natural setting."
+        
+        # Use OpenAI's DALL·E API to generate the image
+        response = openai.Image.create(
+            prompt=prompt,
+            n=1,  # Generate one image
+            size="512x512"  # Set the image size
+        )
+
+        # Return the URL of the generated image
+        return response['data'][0]['url']
+    except Exception as e:
+        return None
+
 
 
 def get_nearby_restaurants(zip_code):
@@ -71,9 +102,19 @@ def index():
         # Get nearby restaurants if zip code is provided
         restaurants = get_nearby_restaurants(zip_code) if zip_code else None
 
-        return render_template("result.html", food_name=chinese_food_name, description=description, restaurants=restaurants)
+        # Generate image of the dish
+        dish_image_url = generate_dish_image(chinese_food_name)
+
+        return render_template(
+            "result.html",
+            food_name=chinese_food_name,
+            description=description,
+            restaurants=restaurants,
+            dish_image_url=dish_image_url,
+        )
     return render_template("index.html")
 
 
+
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, use_reloader=False)
