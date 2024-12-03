@@ -9,11 +9,12 @@
     <style>
         body {
             font-family: 'Noto Serif SC', serif;
-            background-color: #fdf5e6;
+            background: url('{{ url_for('static', filename='images/Bamboo.jpg') }}') no-repeat center center fixed;
+            background-size: cover;
             color: #333;
         }
         .container {
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.85);
             border-radius: 12px;
             padding: 30px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -58,7 +59,7 @@
             <button type="submit" class="btn btn-primary btn-lg w-100">Search</button>
         </form>
         <footer>
-            Powered by OpenAI, Mapbox, and Unsplash
+            Powered by OpenAI and Mapbox
         </footer>
     </div>
 </body>

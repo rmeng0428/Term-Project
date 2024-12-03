@@ -35,10 +35,10 @@ def translate_and_describe_food(chinese_food_name):
 
         # Use the new ChatCompletion method with gpt-3.5-turbo
         response = openai.ChatCompletion.create(
-            model="gpt-3.5-turbo",  # Specify the model
-            messages=messages,  # Provide role-based messages
-            max_tokens=300,  # Adjust the token limit as needed
-            temperature=0.7  # Control the creativity level
+            model="gpt-3.5-turbo",  
+            messages=messages, 
+            max_tokens=300,  
+            temperature=0.7 
         )
 
         # Extract content and format into structured data
@@ -61,8 +61,8 @@ def generate_dish_image(chinese_food_name):
         # Use OpenAI's DALL·E API to generate the image
         response = openai.Image.create(
             prompt=prompt,
-            n=1,  # Generate one image
-            size="512x512"  # Set the image size
+            n=1,  
+            size="512x512" 
         )
 
         # Return the URL of the generated image
