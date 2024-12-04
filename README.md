@@ -61,3 +61,69 @@ The following course topics would be beneficial for our project:
 
 
 This plan ensures a structured yet adaptable approach, enabling us to tackle potential challenges effectively while delivering a functional and engaging project.
+
+
+Project Introduction
+Imagine you walk into a Chinese restaurant that boasts an extensive, authentic menu. The dishes have intriguing Chinese names, but you’re unsure what to order. Is it spicy? Sweet? Vegetarian-friendly? Or maybe you’ve tried a fantastic dish before, but you don’t know its ingredients, or where you can find it again nearby.
+
+For many people in the U.S., exploring Chinese cuisine can feel like a mix of excitement and uncertainty. While Chinese food is widely loved, the language barrier and cultural differences can make it challenging to fully appreciate the depth and diversity of the cuisine.
+
+This is why we created Taste Bridge.
+
+Our website is designed to empower users to explore Chinese food with confidence. Whether you’re a curious foodie, a first-time diner, or someone looking for nearby restaurants, the app provides:
+
+Clear translations of dish names.
+Detailed descriptions, including ingredients and flavor profiles.
+Realistic AI-generated images to visualize the dishes.
+Recommendations for Chinese restaurants near your location.
+
+
+# User Instructions
+
+## 1. Prerequisites
+
+Before running the project, ensure you have the following installed:
+
+- Visual Studio Code
+- Python extension
+- Flask extension
+- pip (Python package installer)
+- A Mapbox API key
+- An OpenAI API key
+
+
+## 2. Installation and Usage
+
+1. Clone this repository
+2. Install the required dependencies:
+
+pip install flask python-dotenv openai requests
+
+3. Create a .env file in the project root directory and add your API keys:
+
+OPENAI_API_KEY=your_openai_api_key
+MAPBOX_API_KEY=your_mapbox_api_key
+
+4. Run the app.py
+5. Open your browser and visit the url: http://127.0.0.1:5000/
+6. Enter the name of the Chinese cuisine and your zipcode
+7. See the results of the cuisine's info and recommended nearby restaurants
+8. Enjoy the food!
+   
+
+# Website Preview
+
+This is how our website looks! It blends traditional Chinese cultural elements with modern design to create an inviting and authentic experience for users.
+
+## Key Design Features:
+- Chinese Symbolism: Incorporates iconic Chinese symbols like bamboo to evoke a sense of tradition and cultural richness.
+- Red Color Palette: Uses shades of red, a color associated with good fortune and happiness in Chinese culture, as the primary accent throughout the website.
+- Modern and Clean Design: The layout is simple and intuitive, ensuring a seamless experience for users of all backgrounds.
+
+### Homepage Screenshot
+![Homepage](screenshots/homepage.png)
+
+### Results Page Screenshot
+![Results Page](screenshots/results.png)
+
+Our design combines elegance and functionality, inviting users to dive into the world of Chinese cuisine with confidence and excitement.
