@@ -121,9 +121,9 @@ This is how our website looks! It blends traditional Chinese cultural elements w
 - Modern and Clean Design: The layout is simple and intuitive, ensuring a seamless experience for users of all backgrounds.
 
 ### Homepage Screenshot
-![Homepage](screenshots/homepage.png)
+![Homepage](static/images/homepage.jpg)
 
 ### Results Page Screenshot
-![Results Page](screenshots/results.png)
+![Results Page](static/images/results.jpg)
 
 Our design combines elegance and functionality, inviting users to dive into the world of Chinese cuisine with confidence and excitement.
